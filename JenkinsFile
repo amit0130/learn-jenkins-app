@@ -36,6 +36,7 @@ pipeline{
                     test -f build/index.html
                     npm test
                 '''
+                junit 'jest-results/junit.xml'
             }
         }
 
@@ -53,13 +54,10 @@ pipeline{
                     sleep 10
                     npx playwright test --reporter=junit
                 ''' 
+                junit 'test-results/**/*.xml'
             }
         }
     }
 
-    post {
-        always{
-            junit 'jest-results/junit.xml'
-        }
-    }
+    
 }
