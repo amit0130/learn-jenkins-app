@@ -85,6 +85,7 @@ pipeline{
                     npx netlify status
                     npx netlify deploy \
                     --dir=build \
+                    --build=false \
                     --prod                
                 '''
             }
