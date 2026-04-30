@@ -81,9 +81,11 @@ pipeline{
                 sh '''
                     npm install netlify-cli
                     npx netlify --version
-                    echo "deploying to production. Site id: $NETLIFY_SITE_ID"
-                    npx netlify status
-                    npx netlify deploy --dir=build --prod --prebuilt             
+                    npx netlify unlink || true
+                    npx netlify deploy --dir=build \
+                    --prod  \
+                    --site=$NETLIFY_SITE_ID \
+                    --auth=$NETLIFY_AUTH_TOKEN           
                 '''
             }
         }
