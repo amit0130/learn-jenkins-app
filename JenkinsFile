@@ -83,7 +83,7 @@ pipeline{
                     npx netlify --version
                     echo "deploying to production. Site id: $NETLIFY_SITE_ID"
                     npx netlify status
-                    npx netlify deploy --dir=build --prod                
+                    npx netlify deploy --dir=BUILD --prod                
                 '''
             }
         }
