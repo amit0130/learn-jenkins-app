@@ -86,7 +86,7 @@ pipeline{
                     npx netlify deploy \
                     --dir=build \
                     --prod \
-                    --build=false                
+                    --skip-build               
                 '''
             }
         }
